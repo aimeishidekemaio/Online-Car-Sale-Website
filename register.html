@@ -54,23 +54,54 @@
 </head>
 
 <body>
+
   <div class="box">
     <h2>Seller Registration</h2>
     <br>
     Name:<br>
     <input type="text" id="name"><br>
+
     Address:<br>
     <input type="text" id="address"><br>
+
     Phone:<br>
     <input type="text" id="phone"><br>
+
     Email:<br>
     <input type="text" id="email"><br>
+
     Username:<br>
     <input type="text" id="username"><br>
+
     Password:<br>
     <input type="password" id="password"><br><br>
+
     <button type="button" onclick="check()">Register</button>
   </div>
+
+  <script>
+    function check() {
+      var name = document.getElementById("name").value;
+      var address = document.getElementById("address").value;
+      var phone = document.getElementById("phone").value;
+      var email = document.getElementById("email").value;
+      var user = document.getElementById("username").value;
+      var pwd = document.getElementById("password").value;
+
+      var nameOk = /^[A-Za-z ]+$/.test(name);
+      var addOk = /^[A-Za-z0-9 ]+$/.test(address);
+      var phoneOk = /^1[0-9]{10}$/.test(phone);
+      var emailOk = email.indexOf("@") > -1 && (email.endsWith(".com") || email.endsWith(".cn"));
+      var userOk = user.length >= 6;
+      var pwdOk = pwd.length >= 6;
+
+      if (nameOk && addOk && phoneOk && emailOk && userOk && pwdOk) {
+        alert("Success");
+      } else {
+        alert("Invalid input");
+      }
+    }
+  </script>
 </body>
 
 </html>
