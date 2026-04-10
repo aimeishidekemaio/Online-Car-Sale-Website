@@ -10,10 +10,24 @@
           font-family:Arial, sans-serif;
         }
         body {
-            max-width: 600px;
-            margin: 2rem auto;
+            background-image:url("background-img.png");
             padding: 0 1rem;
-            background-color: #f5f5f5;
+            background-color: whitesmoke;
+        }
+        .nav {
+            background-color: midnightblue;
+            overflow: hidden;
+            margin-bottom:2rem;
+        }
+        .nav a{float:left;
+               display: block;
+               color: white;
+               text-align:center;
+               padding:20px 20px;
+               text-decoration:none;
+        }
+        .nav a:hover{background-color:wheat;
+                     color: black;
         }
         h1{
            text-align:center;
@@ -21,8 +35,10 @@
            margin-bottom:2rem;
         }
         .form-container {
+            max-width: 550px;
+            margin: 2rem auto;
             background-color: white;
-            padding: 2rem;
+            padding: 24px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); /*Learning From AI*/
         }
@@ -52,34 +68,80 @@
             cursor: pointer; /*Learning from AI*/
         }
         button:hover{background-color:mediumblue;}
+        @media(min-width:768px){.form-container{padding:2rem;}}
+        @media(min-width:1024px){.form-container{padding:2rem; max-width:600px;}}
     </style>
+    <script>
+        function checkForm() {
+            x = document.getElementById("color").value;
+            y = document.getElementById("model").value;
+            z = document.getElementById("year").value;
+            m = document.getElementById("location").value;
+            n = document.getElementById("price").value;
+            patt_x = /^[A-Za-z\s]+$/;
+            patt_z = /^\d{4}$/;
+            patt_n = /^\d+(\.\d{1,2})?$/;
+            if (!patt_x.test(x)) {
+                alert("The color is not valid!")
+                document.getElementById("color").select();
+                return false;
+            }
+            if (y == "") {
+                alert("Please enter the model!")
+                document.getElementById("model").select();
+                return false;
+            }
+            if (!patt_z.test(z)) {
+                alert("The year is not valid!")
+                document.getElementById("year").select();
+                return false;
+            }
+            if (m == "") {
+                alert("Please enter the location！")
+                document.getElementById("location").select();
+                return false;
+            }
+            if (!patt_n.test(n)) {
+                alert("The price is not valid！")
+                document.getElementById("price").select();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
-    <form class="form-container">
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="seller-register.html">Seller Register</a>
+        <a href="publish-car.html">Publish Car</a>
+        <a href="search.html">Search</a>
+    </div>
+    <form class="form-container" onsubmit="return checkForm()">
         <h1>Add a New Car</h1>
         <div class="form-group">
             <label for="color">Color:</label>
-            <input type="text" id="color" placeholder="e.g.:Red, Blue, Black" />
+            <input type="text" id="color" placeholder="e.g.:Red, Blue, Black" value=""/>
         </div>
         <div class="form-group">
             <label for="model">Model:</label>
-            <input type="text" id="model" placeholder="e.g.:Toyota Camry, BMW 3 Series" />
+            <input type="text" id="model" placeholder="e.g.:Toyota Camry, BMW 3 Series" value=""/>
         </div>
         <div class="form-group">
             <label for="year">Year:</label>
-            <input type="text" id ="year" placeholder="e.g.:2022" />
+            <input type="text" id="year" placeholder="e.g.:2022" value=""/>
         </div>
         <div class="form-group">
             <label for="location">Location:</label>
-            <input type="text" id="location" placeholder="e.g.:Los Angeles, California" />
+            <input type="text" id="location" placeholder="e.g.:Los Angeles, California" value=""/>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" id="price" placeholder="e.g.:25000$, 200000￥" />
+            <input type="text" id="price" placeholder="e.g.:25000$, 200000￥" value=""/>
         </div>
         <div class="form-group">
             <label for="carImage">Image of car:</label>
-            <input type="image" id="carImage"/>
+            <input type="image" id="carImage" />
         </div>
 
         <button type="submit">Submit Car Details</button>
