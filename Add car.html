@@ -78,6 +78,7 @@
             z = document.getElementById("year").value;
             m = document.getElementById("location").value;
             n = document.getElementById("price").value;
+            t = document.getElementById("carImage").files;
             patt_x = /^[A-Za-z\s]+$/;
             patt_z = /^\d{4}$/;
             patt_n = /^\d+(\.\d{1,2})?$/;
@@ -97,25 +98,33 @@
                 return false;
             }
             if (m == "") {
-                alert("Please enter the location！")
+                alert("Please enter the location!")
                 document.getElementById("location").select();
                 return false;
             }
             if (!patt_n.test(n)) {
-                alert("The price is not valid！")
+                alert("The price is not valid!")
                 document.getElementById("price").select();
                 return false;
+            }
+            if (t.length == 0) {
+                alert("Please upload your car image!")
+                return false;
+            }
+            else {
+                alert("successful submission!")
+                return true;
             }
         }
     </script>
 </head>
 <body>
     <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="seller-register.html">Seller Register</a>
-        <a href="publish-car.html">Publish Car</a>
-        <a href="search.html">Search</a>
+        <a href="Homepage.html">Home</a>
+        <a href="Login.html">Login</a>
+        <a href="Registration.html">Seller Register</a>
+        <a href="Add car.html">Publish Car</a>
+        <a href="Search Page.html">Search</a>
     </div>
     <form class="form-container" onsubmit="return checkForm()">
         <h1>Add a New Car</h1>
@@ -141,7 +150,7 @@
         </div>
         <div class="form-group">
             <label for="carImage">Image of car:</label>
-            <input type="image" id="carImage" />
+            <input type="file" id="carImage" />
         </div>
 
         <button type="submit">Submit Car Details</button>
