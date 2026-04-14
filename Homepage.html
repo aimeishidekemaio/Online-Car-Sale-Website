@@ -116,10 +116,6 @@ function showWelcome() {
     alert("Welcome to Electric Car Purchase Platform!");
 }
 
-function updateTitle() {
-    document.getElementById("mainTitle").innerHTML = "Popular Tesla Electric Cars";
-}
-
 function showTip() {
     alert("Please log in for more car information!");
 }
@@ -129,19 +125,20 @@ function showTip() {
 <body onload="showWelcome()">
     <div class="nav">
         <img src="logo.jpeg" class="logo" alt="Logo">
-        <a href="index.html">Home</a>
-        <a href="login.html" onclick="showTip()">Login</a>
-        <a href="seller-register.html">Seller Register</a>
-        <a href="publish.html">Publish Car</a>
-        <a href="search.html">Search</a>
+        <a href="Homepage.html">Homepage</a>
+        <a href="Registration.html">Registration</a>
+        <a href="Login.html" onclick="showTip()">Log in</a>
+        <a href="Add car.html">Add Car</a>
+        <a href="Search Page.html">Search</a>
     </div>
 
     <div class="header">
         <h1>Welcome to Electric Car Platform</h1>
         <p>New & Used Electric Vehicles · One-Stop Service</p>
         <p style="font-size:15px; margin-top:8px; font-weight:normal;">
-            Our platform provides high-quality new and used electric cars with honest prices and trusted services. 
-            We aim to make eco-friendly driving easy and affordable for every customer.
+            We are a professional electric vehicle sales platform dedicated to offering safe, high-quality, and cost-effective new and used electric cars.
+            Every vehicle is carefully inspected to ensure reliability, and we provide complete services including vehicle selection, registration, and after-sales support.
+            We strive to make clean, smart, and sustainable driving accessible to families and individuals all around the community.
         </p>
     </div>
 
@@ -149,9 +146,11 @@ function showTip() {
         <div class="col-3">
             <div class="card">
                 <h3>Buying Guide</h3>
-                <p>• How to Choose a Good EV</p>
-                <p>• EV Registration Process</p>
-                <p>• Charging & Battery Info</p>
+                <p>• How to Choose a Good EV that Fits Your Needs</p>
+                <p>• Complete EV Registration and Transfer Process</p>
+                <p>• Useful Tips for Battery Care and Charging</p>
+                <p>• Compare Range, Speed and Running Costs</p>
+                <p>• Government Policies and Subsidies for EVs</p>
             </div>
         </div>
 
@@ -167,17 +166,18 @@ function showTip() {
                      class="car-img" alt="Tesla Model Y">
                 <h3>Tesla Model Y</h3>
                 <p>Price: $45,990 | Mileage: 8,300 mi | Long Range</p>
-                <button class="btn" onclick="updateTitle()">Click to Change Title</button>
             </div>
         </div>
 
         <div class="col-3">
             <div class="card">
                 <h3>Our Services</h3>
-                <p>✅ Real Car Photos</p>
-                <p>✅ No Accident Promise</p>
-                <p>✅ 1-on-1 Consultant</p>
-                <p>✅ After-Sale Support</p>
+                <p>✅ Real and Verified Car Photos</p>
+                <p>✅ No Accident and Strict Quality Check</p>
+                <p>✅ One-on-One Professional Consultant</p>
+                <p>✅ Complete After-Sale Support System</p>
+                <p>✅ Flexible Payment and Financing Plans</p>
+                <p>✅ Free Test Drive for All Models</p>
             </div>
         </div>
     </div>
