@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .nav {
+      background-color: #2d6a4f;
+      padding: 12px 20px;
+    }
+
+    .nav a {
+      color: white;
+      margin-right: 18px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    body {
+      background-color: #f0f7f4;
+      font-family: Arial;
+    }
+
+    .box {
+      background-color: white;
+      width: 420px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #c8e6de;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d6a4f;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input:hover {
+      border-color: #2d6a4f;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #52b788;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background-color: #409672;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <a href="Homepage.html">Home</a>
+    <a href="Registration.html">Register</a>
+    <a href="Login.html">Login</a>
+    <a href="Add car.html">Add Car</a>
+    <a href="Search Page.html">Search</a>
+  </div>
+
+  <div class="box">
+    <h2>Seller Registration</h2>
+    Name:<br>
+    <input type="text" id="name"><br>
+    Address:<br>
+    <input type="text" id="address"><br>
+    Phone:<br>
+    <input type="text" id="phone"><br>
+    Email:<br>
+    <input type="text" id="email"><br>
+    Username:<br>
+    <input type="text" id="username"><br>
+    Password:<br>
+    <input type="password" id="password"><br>
+    <button onclick="check()">Register</button>
+  </div>
+
+  <script>
+    function check() {
+      var name = document.getElementById("name").value;
+      var address = document.getElementById("address").value;
+      var phone = document.getElementById("phone").value;
+      var email = document.getElementById("email").value;
+      var user = document.getElementById("username").value;
+      var pwd = document.getElementById("password").value;
+
+      var nameOk = /^[A-Za-z ]+$/.test(name);
+      var addOk = /^[A-Za-z0-9 ]+$/.test(address);
+      var phoneOk = /^1[0-9]{10}$/.test(phone);
+      var emailOk = email.indexOf("@") > -1 && (email.endsWith(".com") || email.endsWith(".cn"));
+      var userOk = user.length >= 6;
+      var pwdOk = pwd.length >= 6;
+
+      if (nameOk && addOk && phoneOk && emailOk && userOk && pwdOk) {
+        alert("Success");
+      } else {
+        alert("Invalid input");
+      }
+    }
+  </script>
+</body>
+
+</html>
