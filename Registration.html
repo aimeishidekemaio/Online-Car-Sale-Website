@@ -88,19 +88,21 @@
 
   <div class="box">
     <h2>Seller Registration</h2>
-    Name:<br>
-    <input type="text" id="name"><br>
-    Address:<br>
-    <input type="text" id="address"><br>
-    Phone:<br>
-    <input type="text" id="phone"><br>
-    Email:<br>
-    <input type="text" id="email"><br>
-    Username:<br>
-    <input type="text" id="username"><br>
-    Password:<br>
-    <input type="password" id="password"><br>
-    <button onclick="check()">Submit</button>
+    <form onsubmit="return check()">
+      Name:<br>
+      <input type="text" id="name"><br>
+      Address:<br>
+      <input type="text" id="address"><br>
+      Phone:<br>
+      <input type="text" id="phone"><br>
+      Email:<br>
+      <input type="text" id="email"><br>
+      Username:<br>
+      <input type="text" id="username"><br>
+      Password:<br>
+      <input type="password" id="password"><br>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
   <script>
@@ -121,32 +123,34 @@
 
       if (!nameOk) {
         alert("Name error: Only letters and spaces are allowed!");
-        return;
+        return false;
       }
       if (!addOk) {
         alert("Address error: Only letters, numbers and spaces are allowed!");
-        return;
+        return false;
       }
       if (!phoneOk) {
         alert("Phone error: Must be a 11-digit Chinese mobile number starting with 1!");
-        return;
+        return false;
       }
       if (!emailOk) {
         alert("Email error: Must contain @ and end with .com or .cn!");
-        return;
+        return false;
       }
       if (!userOk) {
         alert("Username error: Must be at least 6 characters long!");
-        return;
+        return false;
       }
       if (!pwdOk) {
         alert("Password error: Must be at least 6 characters long!");
-        return;
+        return false;
       }
 
       alert("Success: Registration submitted successfully!");
+      return true;
     }
   </script>
+
 </body>
 
 </html>
