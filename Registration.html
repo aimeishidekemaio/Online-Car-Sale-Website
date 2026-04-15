@@ -100,7 +100,7 @@
     <input type="text" id="username"><br>
     Password:<br>
     <input type="password" id="password"><br>
-    <button onclick="check()">Register</button>
+    <button onclick="check()">Submit</button>
   </div>
 
   <script>
@@ -119,11 +119,34 @@
       var userOk = user.length >= 6;
       var pwdOk = pwd.length >= 6;
 
-      if (nameOk && addOk && phoneOk && emailOk && userOk && pwdOk) {
-        alert("Success");
-      } else {
-        alert("Invalid input");
+
+      if (!nameOk) {
+        alert("Name error: Only letters and spaces are allowed!");
+        return;
       }
+      if (!addOk) {
+        alert("Address error: Only letters, numbers and spaces are allowed!");
+        return;
+      }
+      if (!phoneOk) {
+        alert("Phone error: Must be a 11-digit Chinese mobile number starting with 1!");
+        return;
+      }
+      if (!emailOk) {
+        alert("Email error: Must contain @ and end with .com or .cn!");
+        return;
+      }
+      if (!userOk) {
+        alert("Username error: Must be at least 6 characters long!");
+        return;
+      }
+      if (!pwdOk) {
+        alert("Password error: Must be at least 6 characters long!");
+        return;
+      }
+
+
+      alert("Success: Registration submitted successfully!");
     }
   </script>
 </body>
