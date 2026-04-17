@@ -14,39 +14,98 @@
 
     body {
       background-color: #f5f7fa;
+      background-image: url("bg.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #122e8a;
+      padding: 22px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0 20px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-left,
+    .nav-right {
+      display: contents;
+      gap: 0;
+    }
+
+    .nav-link {
+      color: #f5efea;
+      text-decoration: none;
+      font-size: 17px;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+      border-bottom: 2px solid #e72d48;
+      transform: scale(1.10);
+    }
+
+    .nav-link.active {
+      color: #ffffff;
+      border-bottom: 2px solid #e72d48;
+      font-weight: bold;
+    }
+
+    .page-content {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 120px 20px 20px;
     }
 
     .login-card {
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       background-color: #ffffff;
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 40px 32px;
+      padding: 48px 36px;
     }
 
     .login-title {
-      font-size: 24px;
+      font-size: 26px;
       text-align: center;
-      color: #333333;
-      margin-bottom: 28px;
+      color: #333;
+      margin-bottom: 32px;
+      font-weight: 600;
     }
 
     .input-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .input-group input {
       width: 100%;
-      height: 46px;
+      height: 50px;
       border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      padding: 0 15px;
+      border-radius: 8px;
+      padding: 0 18px;
       font-size: 15px;
       outline: none;
     }
@@ -57,48 +116,78 @@
 
     .login-btn {
       width: 100%;
-      height: 46px;
-      background-color: #b70000;
-      color: #ffffff;
+      height: 50px;
+      background-color: #e72d48;
+      color: #fff;
       border: none;
-      border-radius: 4px;
-      font-size: 17px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
       cursor: pointer;
       margin-top: 8px;
     }
 
     .login-btn:hover {
-      background-color: #990000;
+      background-color: #d1243e;
     }
 
-    .login-footer {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-link {
+        font-size: 15px;
+      }
+      .login-card {
+        padding: 32px 24px;
+      }
     }
 
-    .login-footer a {
-      color: #409eff;
-      text-decoration: none;
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 16px 0;
+      }
+      .page-content {
+        padding: 100px 15px 20px;
+      }
+      .login-card {
+        padding: 28px 20px;
+      }
+      .login-title {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="login-card">
-    <h2 class="login-title">Account Log In</h2>
-    <div class="input-group">
-      <input type="text" placeholder="Please enter your account">
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="Homepage.html" class="nav-link">homepage</a>
+        <a href="Search Page.html" class="nav-link">search-page</a>
+      </div>
+      <a href="Login.html" class="nav-link active">login-page</a>
+      <div class="nav-right">
+        <a href="Add-car.html" class="nav-link">add-car-page</a>
+        <a href="Registration.html" class="nav-link">register-page</a>
+      </div>
     </div>
-    <div class="input-group">
-      <input type="password" placeholder="Please enter your password">
-    </div>
-    <button class="login-btn">Log in</button>
-    <div class="login-footer">
-      <a href="#">Register</a>
-      <a href="#">Forgot Password</a>
-      <a href="#">Help Center</a>
+  </nav>
+
+  <div class="page-content">
+    <div class="login-card">
+      <h2 class="login-title">Account Log In</h2>
+      <div class="input-group">
+        <input type="text" placeholder="Please enter your account">
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Please enter your password">
+      </div>
+      <button class="login-btn">Log in</button>
     </div>
   </div>
+
 </body>
 </html>
