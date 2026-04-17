@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Search Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+
+            background-image: url("background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            color: #333;
+            padding: 22px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: dodgerblue;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover {
+            color: #337ecc;
+        }
+
+        .wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px 20px;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .search-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 28px;
+            color: #333;
+        }
+
+        .search-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .form-group label {
+            font-weight: normal;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            width: 100%;
+        }
+
+        .form-control {
+            padding: 0 15px;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border 0.3s;
+            outline: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .form-control:focus {
+            border-color: dodgerblue;
+            box-shadow: none;
+        }
+
+        .search-btn {
+            width: 100%;
+            height: 50px;
+            background-color: #e72d48;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: normal;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding: 0;
+        }
+
+        .search-btn:hover {
+            background-color: #d1243e;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .nav-menu a {
+                font-size: 15px;
+            }
+            .search-card {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 16px 0;
+            }
+            .nav-container {
+                gap: 12px;
+            }
+            .wrapper {
+                padding: 40px 15px 20px;
+            }
+            .search-card {
+                padding: 28px 20px;
+            }
+            .search-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-menu">
+                <a href="Homepage.html">Homepage</a>
+                <a href="Add car.html">Add-Car-Page</a>
+            </div>
+            
+            <div class="logo">Search Page</div>
+            
+            <div class="nav-menu">
+                <a href="Login.html">Login-page</a>
+                <a href="Registration.html">Register-page</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="search-container">
+            <h1 class="search-title">Find Your Ideal Car</h1>
+            <div class="search-card">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label>Car Model</label>
+                        <input type="text" class="form-control" placeholder="Enter car model">
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <select class="form-control">
+                            <option value="">Year</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price Range</label>
+                        <select class="form-control">
+                            <option value="">All Prices</option>
+                            <option>Under $100K</option>
+                            <option>$100K - $200K</option>
+                            <option>$200K - $300K</option>
+                            <option>$300K - $500K</option>
+                            <option>Above $500K</option>
+                        </select>
+                    </div>
+                </form>
+                <button class="search-btn">Search Now</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
